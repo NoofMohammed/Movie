@@ -30,7 +30,7 @@
   /* background-color: #ffc107;
   border-color: #ffc107; */
 }
-.title {
+.card-title.h5 {
   font-family: sans;
   font-size: 2rem;
   font-weight: 700;
@@ -50,4 +50,18 @@
   display: flex;
   justify-content: space-between;
   font-family: fantasy;
+}
+span {
+  font-weight: bolder;
+}
+.card {
+  position: relative;
+  margin: 16%;
+  width: 75%;
+  border: solid rgb(0 0 0 / 13%);
+  background-color: #fff !important;
+  border: 1px solid rgba(0, 0, 0, 0.125) !important;
+  border-radius: 0.25rem !important;
+
+  border: aliceblue !important;
 }

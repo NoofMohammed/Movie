@@ -1,0 +1,30 @@
+.navigation {
+  display: flex;
+  justify-content: center;
+}
+.buttonNav {
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+    width: 8%;
+    color: #000;
+    font-size: 1.5rem;
+    text-decoration: none;
+    font-weight: 700;
+}
+/* button.btn.btn-primary {
+  margin-right: 34px !important;
+  color: #000 !important;
+  font-size: 1.5rem;
+  text-decoration: none;
+  font-weight: 700;
+} */
+/* .btn-primary {
+    color: #fff;
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+    width: 8%;
+    color: #000;
+    font-size: 1.5rem;
+    text-decoration: none;
+    font-weight: 700;
+}

@@ -56,20 +56,36 @@ const MovieDetails = () => {
         <div>
           <Card.Body>
             <Card.Title>{movie.original_title}</Card.Title>
-            <Card.Text>{movie.overview}</Card.Text>
+            <Card.Text className="descripe">{movie.overview}</Card.Text>
             <div className="date&votes">
-              <Card.Text>Relase Date: {movie.release_date}</Card.Text>
-              <Card.Text>{movie.vote_count} Votes</Card.Text>
+              <Card.Text className="date_votes">
+                Relase Date: {movie.release_date}
+              </Card.Text>
+              <Card.Text className="date_votes">
+                {movie.vote_count} Votes
+              </Card.Text>
             </div>
             <div className="details1">
-              <Card.Text>Genres: {genres.join(",")}.</Card.Text>
-              <Card.Text>Status: {movie.status}.</Card.Text>
-              <Card.Text>Duration: {movie.runtime}.</Card.Text>
+              <Card.Text>
+                Genres: <span>{genres.join(",")}</span>.
+              </Card.Text>
+              <Card.Text>
+                Status: <span>{movie.status}</span>.
+              </Card.Text>
+              <Card.Text>
+                Duration: <span>{movie.runtime}</span>.
+              </Card.Text>
             </div>
             <div className="details2">
-              <Card.Text>Revenue: {movie.revenue} $.</Card.Text>
-              <Card.Text>Budget: {movie.budget} $.</Card.Text>
-              <Card.Text>Movie Home Page</Card.Text>
+              <Card.Text>
+                Revenue: <span>{movie.revenue}</span> $.
+              </Card.Text>
+              <Card.Text>
+                Budget: <span>{movie.budget}</span> $.
+              </Card.Text>
+              <Card.Text>
+                <span>Movie Home Page</span>
+              </Card.Text>
             </div>
             <div className="buttons">
               <Link to="/">
