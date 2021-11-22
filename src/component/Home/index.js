@@ -23,9 +23,11 @@ const Home = () => {
       });
   }, []);
   return (
-    // <div className="cards">
-    movies.map((movie) => <Card movie={movie} key={movie.id.toString()} />)
-    // </div>
+    <div className="cards">
+      {movies.map((movie) => (
+        <Card movie={movie} key={movie.id.toString()} />
+      ))}
+    </div>
   );
 };
 

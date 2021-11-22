@@ -6,32 +6,34 @@ const Cards = ({ movie }) => {
   console.log(movie, "88888");
 
   return (
+    // <div className="main">
     <div className="showMovies">
-      <div className="main">
-        <Card
-        //    style={{ width: "40%" }}
-        >
-          <div className="card">
-            <div>
-              <Card.Img
-                className="movie-img"
-                variant="top"
-                src={`https://image.tmdb.org/t/p/w370_and_h556_bestv2/${movie.poster_path}`}
-                //   style={{ width: "18rem", height: "18rem" }}
-              />
+      <Card>
+        {/* <div className="main"> */}
+        <div>
+          <Card.Img
+            className="movie-img"
+            variant="top"
+            src={`https://image.tmdb.org/t/p/w370_and_h556_bestv2/${movie.poster_path}`}
+            //   style={{ width: "18rem", height: "18rem" }}
+          />
+        </div>
+        <div>
+          <Card.Body>
+            <Link className="title" to={`/details/${movie.id}`}>
+              {movie.original_title}
+            </Link>
+            <Card.Text className="descripe">{movie.overview}</Card.Text>
+            <div className="date_votes">
+              <Card.Text>{movie.release_date}</Card.Text>
+              <Card.Text>{movie.vote_count} Votes</Card.Text>
             </div>
-            <div>
-              <Card.Body>
-                <Link to={`/details/${movie.id}`}>{movie.original_title}</Link>
-                <Card.Text>{movie.overview}</Card.Text>
-                <Button variant="primary">Go somewhere</Button>
-              </Card.Body>
-            </div>
-          </div>
-        </Card>
-      </div>
-      ;
+          </Card.Body>
+        </div>
+        {/* </div> */}
+      </Card>
     </div>
+    // </div>
   );
 };
 export default Cards;

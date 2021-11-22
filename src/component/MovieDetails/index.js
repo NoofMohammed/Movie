@@ -1,16 +1,23 @@
 import { React, useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 // import Card from "../Card";
 import { Card, Button } from "react-bootstrap";
+// import {Button} from 'react-bootstrap/Button'
 
 import "./MovieDetails.css";
 const MovieDetails = () => {
   const [movie, setMovie] = useState({ id: "", genres: [""] });
   const [genres, setGenres] = useState([""]);
+  const [favorite, setFavorite] = useState([]);
+
   const { id } = useParams();
+  // const navigate = useNavigate();
   console.log(id, "iiiiidddddddddddddddddddd");
 
+  // const backToHome = () => {
+  //   navigate.push("/home");
+  // };
   useEffect(() => {
     axios
       .get(
@@ -25,11 +32,16 @@ const MovieDetails = () => {
             return genre.name;
           })
         );
+        setFavorite();
       })
       .catch((error) => {
         console.log(error);
       });
   }, []);
+
+  // const addToFavorites = () => {
+  //   favorite.push();
+  // };
 
   return (
     <div>
@@ -60,8 +72,16 @@ const MovieDetails = () => {
               <Card.Text>Movie Home Page</Card.Text>
             </div>
             <div className="buttons">
-              <Button variant="primary">Back To Home</Button>
-              <Button variant="primary">Go To Favorites</Button>
+              <Link to="/">
+                <Button onClick="/home" variant="primary">
+                  Back To Home
+                </Button>
+              </Link>
+              <Link to="/favorites">
+                <Button onClick="/favorites" variant="warning">
+                  Go To Favorites
+                </Button>
+              </Link>
               <Button variant="primary">Added To Favorites</Button>
             </div>
           </Card.Body>

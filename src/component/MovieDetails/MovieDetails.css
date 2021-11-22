@@ -14,3 +14,40 @@
   display: flex;
   justify-content: space-around;
 }
+.card {
+  position: relative;
+  display: flex;
+  /* flex-direction: column; */
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
+}
+.btn-warning {
+  color: #fff !important;
+  /* background-color: #ffc107;
+  border-color: #ffc107; */
+}
+.title {
+  font-family: sans;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #000;
+}
+.descripe {
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji,
+    Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  text-align: left;
+}
+.date_votes {
+  display: flex;
+  justify-content: space-between;
+  font-family: fantasy;
+}
