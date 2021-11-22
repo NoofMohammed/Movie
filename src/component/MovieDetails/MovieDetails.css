@@ -1,0 +1,16 @@
+.date\&votes {
+  display: flex;
+  justify-content: space-between;
+}
+.details1 {
+  display: flex;
+  justify-content: space-between;
+}
+.details2 {
+  display: flex;
+  justify-content: space-between;
+}
+.buttons {
+  display: flex;
+  justify-content: space-around;
+}
