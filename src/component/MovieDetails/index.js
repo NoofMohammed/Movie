@@ -2,7 +2,7 @@ import { React, useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 // import Card from "../Card";
-import { Card, Button } from "react-bootstrap";
+import { Modal, Card, Button } from "react-bootstrap";
 // import {Button} from 'react-bootstrap/Button'
 
 import "./MovieDetails.css";
@@ -10,14 +10,18 @@ const MovieDetails = () => {
   const [movie, setMovie] = useState({ id: "", genres: [""] });
   const [genres, setGenres] = useState([""]);
   const [favorite, setFavorite] = useState([]);
+  const [show, setShow] = useState(false);
 
   const { id } = useParams();
-  // const navigate = useNavigate();
   console.log(id, "iiiiidddddddddddddddddddd");
+  const addToFavorite = () => {
+    console.log(movie.id, "id setFavorite");
+    setFavorite(favorite.push(movie.id));
+    localStorage.setItem("my_favorite", JSON.stringify(favorite));
+    console.log(favorite, "movie.");
+    setShow(false);
+  };
 
-  // const backToHome = () => {
-  //   navigate.push("/home");
-  // };
   useEffect(() => {
     axios
       .get(
@@ -32,16 +36,15 @@ const MovieDetails = () => {
             return genre.name;
           })
         );
-        setFavorite();
+        // setFaorite();
       })
       .catch((error) => {
         console.log(error);
       });
   }, []);
 
-  // const addToFavorites = () => {
-  //   favorite.push();
-  // };
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   return (
     <div>
@@ -98,7 +101,28 @@ const MovieDetails = () => {
                   Go To Favorites
                 </Button>
               </Link>
-              <Button variant="primary">Added To Favorites</Button>
+
+              <Button variant="primary" onClick={handleShow}>
+                Added To Favorite
+              </Button>
+
+              <Modal show={show} onHide={handleClose}>
+                <Modal.Header closeButton>
+                  <Modal.Title>Add Movie To Favorites</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                  Do you want to add Venom: Let There Be Carnage to favorites
+                  list?
+                </Modal.Body>
+                <Modal.Footer>
+                  <Button variant="secondary" onClick={handleClose}>
+                    No
+                  </Button>
+                  <Button variant="primary" onClick={addToFavorite}>
+                    yes
+                  </Button>
+                </Modal.Footer>
+              </Modal>
             </div>
           </Card.Body>
         </div>
