@@ -5,3 +5,11 @@
   /* display: flex;
   justify-content: space-around; */
 }
+.title {
+  text-align: center;
+  color: rgb(0 98 204);
+  margin: 2rem 0;
+  font-family: serif;
+  font-weight: 700;
+  font-size: 3rem;
+}

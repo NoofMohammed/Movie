@@ -11,19 +11,13 @@
 .card-img-top {
   width: 85%;
 }
-/* .showMovies {
-  width: 100%;
-} */
-/* .card {
-  position: relative;
-  display: flex;
-  background-color: #fff;
-  background-clip: border-box;
-  border: 1px solid rgba(0, 0, 0, 0.125);
-  border-radius: 0.25rem;
-  width: 50%;
-} */
-.title {
+.card-body {
+  flex: 1 1 auto;
+  padding: 1rem 1rem;
+  width: 102%;
+  text-align: center;
+}
+a.title {
   font-family: sans;
   font-size: 2rem;
   font-weight: 700;
@@ -43,4 +37,12 @@
   display: flex;
   justify-content: space-between;
   font-family: fantasy;
+}
+.card-img-top:hover {
+  /* width: 100px;
+
+  display: block; */
+  /* z-index: 999; */
+  transform: scale(1.5);
+  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); */
 }

@@ -2,7 +2,7 @@ import { React, useState, useEffect } from "react";
 import axios from "axios";
 // import { Card, Button } from "react-bootstrap";
 // import { Link } from "react-router-dom";
-import Card from "../Card";
+import Cards from "../Card";
 import "./home.css";
 const Home = () => {
   const [movies, setMovies] = useState([{ id: "" }]);
@@ -23,10 +23,13 @@ const Home = () => {
       });
   }, []);
   return (
-    <div className="cards">
-      {movies.map((movie) => (
-        <Card movie={movie} key={movie.id.toString()} />
-      ))}
+    <div>
+      <h4 className="title">Movies</h4>
+      <div className="cards">
+        {movies.map((movie) => (
+          <Cards movie={movie} key={movie.id.toString()} />
+        ))}
+      </div>
     </div>
   );
 };

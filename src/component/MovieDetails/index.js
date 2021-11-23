@@ -1,7 +1,6 @@
 import { React, useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import axios from "axios";
-// import Card from "../Card";
 import { Modal, Card, Button } from "react-bootstrap";
 // import {Button} from 'react-bootstrap/Button'
 
@@ -9,16 +8,18 @@ import "./MovieDetails.css";
 const MovieDetails = () => {
   const [movie, setMovie] = useState({ id: "", genres: [""] });
   const [genres, setGenres] = useState([""]);
-  const [favorite, setFavorite] = useState([]);
+  // const [favorite, setFavorite] = useState([]);
   const [show, setShow] = useState(false);
 
   const { id } = useParams();
   console.log(id, "iiiiidddddddddddddddddddd");
   const addToFavorite = () => {
     console.log(movie.id, "id setFavorite");
-    setFavorite(favorite.push(movie.id));
-    localStorage.setItem("my_favorite", JSON.stringify(favorite));
-    console.log(favorite, "movie.");
+    const array = JSON.parse(localStorage.getItem("my_favorite")) || [];
+    console.log(array);
+    array.push(movie.id);
+    localStorage.setItem("my_favorite", JSON.stringify(array));
+    console.log(array);
     setShow(false);
   };
 
@@ -29,14 +30,13 @@ const MovieDetails = () => {
       )
       .then((result) => {
         console.log(result, "resultmmmmmmmmmmmmmmmmmmmm");
-        setMovie(result.data);
+        setMovie(result);
         setGenres(
           genres.map((genre) => {
             console.log(genre, "hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh");
             return genre.name;
           })
         );
-        // setFaorite();
       })
       .catch((error) => {
         console.log(error);

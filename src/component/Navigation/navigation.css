@@ -1,30 +1,49 @@
 .navigation {
   display: flex;
   justify-content: center;
+
+  margin: 22px;
 }
-.buttonNav {
-    background-color: #0d6efd;
-    border-color: #0d6efd;
-    width: 8%;
-    color: #000;
-    font-size: 1.5rem;
-    text-decoration: none;
-    font-weight: 700;
-}
-/* button.btn.btn-primary {
-  margin-right: 34px !important;
-  color: #000 !important;
+button.btn.btn-primary {
+  color: #000;
   font-size: 1.5rem;
   text-decoration: none;
   font-weight: 700;
-} */
-/* .btn-primary {
-    color: #fff;
-    background-color: #0d6efd;
-    border-color: #0d6efd;
-    width: 8%;
-    color: #000;
-    font-size: 1.5rem;
-    text-decoration: none;
-    font-weight: 700;
+}
+button.btn.btn-warning {
+  color: #000;
+  font-size: 1.5rem;
+  text-decoration: none;
+  font-weight: 700;
+  margin-left: 44px;
+}
+button.btn.btn-warning:hover {
+  transform: scale(1.5);
+  color: #ffffff;
+}
+button.btn.btn-primary:hover {
+  transform: scale(1.5);
+  color: #ffffff;
+}
+.span.badge.badge-light {
+  color: #212529;
+  background-color: #f8f9fa;
+}
+.badge {
+  display: inline-block;
+  padding: 0.35em 0.65em;
+  font-size: 0.75em;
+  font-weight: 700;
+  line-height: 1;
+  /* color: #212529; */
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: 0.25rem;
+}
+.btn .badge {
+  position: relative;
+  top: -1px;
+  color: #212529;
+  background-color: #f8f9fa;
 }
