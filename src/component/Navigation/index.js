@@ -17,7 +17,6 @@ const Navigation = () => {
     return count;
   };
 
-  console.log(5555555555555555555);
   return (
     <>
       <div className="navigation">

@@ -3,7 +3,7 @@ import { Card, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./card.css";
 const Cards = ({ movie }) => {
-  console.log(movie, "88888");
+  console.log(movie, "movie");
 
   return (
     // <div className="main">
@@ -30,10 +30,8 @@ const Cards = ({ movie }) => {
             </div>
           </Card.Body>
         </div>
-        {/* </div> */}
       </Card>
     </div>
-    // </div>
   );
 };
 export default Cards;

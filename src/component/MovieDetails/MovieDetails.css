@@ -17,7 +17,6 @@
 .card {
   position: relative;
   display: flex;
-  /* flex-direction: column; */
   min-width: 0;
   word-wrap: break-word;
   background-color: #fff;
@@ -27,8 +26,6 @@
 }
 .btn-warning {
   color: #fff !important;
-  /* background-color: #ffc107;
-  border-color: #ffc107; */
 }
 .card-title.h5 {
   font-family: sans;

@@ -2,24 +2,21 @@ import { React, useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 import { Modal, Card, Button } from "react-bootstrap";
-// import {Button} from 'react-bootstrap/Button'
 
 import "./MovieDetails.css";
 const MovieDetails = () => {
   const [movie, setMovie] = useState({ id: "", genres: [""] });
   const [genres, setGenres] = useState([""]);
-  // const [favorite, setFavorite] = useState([]);
   const [show, setShow] = useState(false);
 
   const { id } = useParams();
-  console.log(id, "iiiiidddddddddddddddddddd");
   const addToFavorite = () => {
-    console.log(movie.id, "id setFavorite");
+    console.log(movie.data.id, "id setFavorite");
     const array = JSON.parse(localStorage.getItem("my_favorite")) || [];
     console.log(array);
-    array.push(movie.id);
+    array.push(movie.data.id);
     localStorage.setItem("my_favorite", JSON.stringify(array));
-    console.log(array);
+    console.log(array, "array");
     setShow(false);
   };
 
@@ -29,11 +26,10 @@ const MovieDetails = () => {
         `https://api.themoviedb.org/3/movie/${id}?language=en-US&api_key=1bfa430aada4409bfa6a3c5528128e8a`
       )
       .then((result) => {
-        console.log(result, "resultmmmmmmmmmmmmmmmmmmmm");
         setMovie(result);
         setGenres(
           genres.map((genre) => {
-            console.log(genre, "hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh");
+            // console.log(genre, "genre");
             return genre.name;
           })
         );
@@ -48,7 +44,7 @@ const MovieDetails = () => {
 
   return (
     <div>
-      {console.log(genres, "kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk")}
+      {/* {console.log(genres, "genres")} */}
       <Card>
         <div>
           <Card.Img
@@ -92,14 +88,10 @@ const MovieDetails = () => {
             </div>
             <div className="buttons">
               <Link to="/">
-                <Button onClick="/home" variant="primary">
-                  Back To Home
-                </Button>
+                <Button variant="primary">Back To Home</Button>
               </Link>
               <Link to="/favorites">
-                <Button onClick="/favorites" variant="warning">
-                  Go To Favorites
-                </Button>
+                <Button variant="warning">Go To Favorites</Button>
               </Link>
 
               <Button variant="primary" onClick={handleShow}>
