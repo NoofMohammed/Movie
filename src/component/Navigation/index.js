@@ -8,7 +8,6 @@ const Navigation = () => {
   const [favorite, setFavorite] = useState();
   useEffect(() => {
     let idArray = JSON.parse(localStorage.getItem("my_favorite"));
-    console.log(idArray, "ia");
     setFavorite(idArray.length);
   }, []);
 

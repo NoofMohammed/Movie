@@ -6,10 +6,8 @@ const Cards = ({ movie }) => {
   console.log(movie, "movie");
 
   return (
-    // <div className="main">
     <div className="showMovies">
       <Card className="card-movie">
-        {/* <div className="main"> */}
         <div>
           <Card.Img
             className="movie-img"

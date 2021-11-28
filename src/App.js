@@ -6,11 +6,9 @@ import Navigation from "./component/Navigation/index";
 import MovieDetails from "./component/MovieDetails/index";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-// import logo from "./logo.svg";
 import "./App.css";
 
 function App() {
-  console.log("Appp");
   return (
     <Router>
       {<Navigation />}

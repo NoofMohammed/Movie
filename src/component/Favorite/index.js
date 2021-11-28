@@ -7,7 +7,6 @@ import "./favorite.css";
 const Favorite = () => {
   const [movies, setMovies] = useState([]);
   let idArray = JSON.parse(localStorage.getItem("my_favorite"));
-  console.log(idArray, "idArray");
 
   useEffect(() => {
     idArray.map((id) => {
@@ -17,15 +16,12 @@ const Favorite = () => {
         )
         .then((result) => {
           movies.push(result.data);
-          console.log("movies", movies);
           setMovies([...movies]);
         })
         .catch((error) => {
           console.log(error);
         });
     });
-
-    console.log(idArray, "id in");
   }, []);
   return (
     <>

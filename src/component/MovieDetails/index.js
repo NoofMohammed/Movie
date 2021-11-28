@@ -11,12 +11,9 @@ const MovieDetails = () => {
 
   const { id } = useParams();
   const addToFavorite = () => {
-    console.log(movie.data.id, "id setFavorite");
     const array = JSON.parse(localStorage.getItem("my_favorite")) || [];
-    console.log(array);
     array.push(movie.data.id);
     localStorage.setItem("my_favorite", JSON.stringify(array));
-    console.log(array, "array");
     setShow(false);
   };
 

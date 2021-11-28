@@ -13,7 +13,6 @@ const Home = () => {
         "https://api.themoviedb.org/3/discover/movie?page=1&include_video=false&include_adult=false&sort_by=popularity.desc&language=en-US&api_key=1bfa430aada4409bfa6a3c5528128e8a"
       )
       .then((result) => {
-        console.log(result.data.results, "result");
         const _result = result.data.results;
         console.log(_result, "_result");
         setMovies([..._result]);
