@@ -5,7 +5,7 @@ import "./favorite.css";
 // import { Modal, Card, Button } from "react-bootstrap";
 // import { Link } from "react-router-dom";
 const Favorite = () => {
-  const [movies, setMovies] = useState([{ id: "" }]);
+  const [movies, setMovies] = useState([]);
   let idArray = JSON.parse(localStorage.getItem("my_favorite"));
   console.log(idArray, "idArray");
 
@@ -16,13 +16,15 @@ const Favorite = () => {
           `https://api.themoviedb.org/3/movie/${id}?language=en-US&api_key=1bfa430aada4409bfa6a3c5528128e8a`
         )
         .then((result) => {
-          // setMovies([...movies, result.id]);
-          setMovies(result.data);
+          movies.push(result.data);
+          console.log("movies", movies);
+          setMovies([...movies]);
         })
         .catch((error) => {
           console.log(error);
         });
     });
+
     console.log(idArray, "id in");
   }, []);
   return (
@@ -30,7 +32,9 @@ const Favorite = () => {
       <h4 className="titleFavorite">Favorites Movies</h4>
       <div className="showMyFavorites">
         {console.log(movies, "log")}
-        <Cards movie={movies} />
+        {movies.map((movie) => (
+          <Cards movie={movie} />
+        ))}
       </div>
     </>
   );

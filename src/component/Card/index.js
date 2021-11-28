@@ -8,14 +8,14 @@ const Cards = ({ movie }) => {
   return (
     // <div className="main">
     <div className="showMovies">
-      <Card>
+      <Card className="card-movie">
         {/* <div className="main"> */}
         <div>
           <Card.Img
             className="movie-img"
             variant="top"
             src={`https://image.tmdb.org/t/p/w370_and_h556_bestv2/${movie.poster_path}`}
-            //   style={{ width: "18rem", height: "18rem" }}
+            style={{ width: "10rem", height: "17rem" }}
           />
         </div>
         <div>

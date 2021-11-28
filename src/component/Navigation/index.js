@@ -1,21 +1,16 @@
 // import Button from "@restart/ui/esm/Button";
-import { React } from "react";
+import { React, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "react-bootstrap";
 import "./navigation.css";
 
 const Navigation = () => {
-  const counter = () => {
+  const [favorite, setFavorite] = useState();
+  useEffect(() => {
     let idArray = JSON.parse(localStorage.getItem("my_favorite"));
-    let count;
-
-    if (!idArray) {
-      count = 0;
-    } else {
-      count = idArray.length;
-    }
-    return count;
-  };
+    console.log(idArray, "ia");
+    setFavorite(idArray.length);
+  }, []);
 
   return (
     <>
@@ -24,9 +19,9 @@ const Navigation = () => {
           <Button variant="primary">Home</Button>
         </Link>
         <Link to="/favorites">
-          <Button variant="warning">
+          <Button variant="warning" className="favorite">
             Favorites
-            <span className="badge badge-light">{counter()}</span>
+            <span className="badge badge-light">{favorite}</span>
           </Button>
         </Link>
       </div>

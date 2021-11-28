@@ -11,18 +11,15 @@ button.btn.btn-primary {
   font-weight: 700;
 }
 button.btn.btn-warning {
-  color: #000;
   font-size: 1.5rem;
   text-decoration: none;
   font-weight: 700;
   margin-left: 44px;
 }
 button.btn.btn-warning:hover {
-  transform: scale(1.5);
   color: #ffffff;
 }
 button.btn.btn-primary:hover {
-  transform: scale(1.5);
   color: #ffffff;
 }
 .span.badge.badge-light {
@@ -46,4 +43,7 @@ button.btn.btn-primary:hover {
   top: -1px;
   color: #212529;
   background-color: #f8f9fa;
+}
+button.favorite.btn.btn-warning {
+  color: #000 !important;
 }

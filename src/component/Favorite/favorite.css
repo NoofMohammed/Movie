@@ -6,3 +6,8 @@
   font-weight: 700;
   font-size: 3rem;
 }
+.showMyFavorites {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 1.5rem 1.5rem;
+}
